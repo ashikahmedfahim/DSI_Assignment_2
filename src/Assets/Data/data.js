@@ -1,4 +1,4 @@
-const data = [
+export const  data = [
   {
     link: "https://www.amazon.com/AmazonBasics-Buddies-Bedding-Pillow-Blanket/dp/B0843ZNKG3/ref=sr_1_1_sspa?dchild=1&keywords=amazonbasics&pd_rd_r=612de30a-0e5c-49c4-af79-8853ab8f6570&pd_rd_w=jpI1V&pd_rd_wg=MxDgf&pf_rd_p=9349ffb9-3aaa-476f-8532-6a4a5c3da3e7&pf_rd_r=2FJ6NMDJ2RRVH6S7EXAM&qid=1624897743&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFTRFNJREJYRUlHODUmZW5jcnlwdGVkSWQ9QTAyMDk0MjhBQTdXTUxYSE1JOUEmZW5jcnlwdGVkQWRJZD1BMDI2ODU2NDVKMFlBTktGMTVLQyZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=",
     name: "Amazon Basics Kids Bear Buddies Bedding Nap Set with Bear Pillow and Fleece Throw Blanket",

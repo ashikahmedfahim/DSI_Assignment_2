@@ -1,29 +1,36 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import { data } from "./Assets/Data/data";
 
 function App() {
-  const productData = [];
-  var options = {
-    method: "GET",
-    url: "https://amazon-products1.p.rapidapi.com/search",
-    params: { country: "US", query: "macbook+pro", page: "1" },
-    headers: {
-      "x-rapidapi-key": "f22158101dmsh55cd764a559dc33p13e873jsnfb4a3f29d95b",
-      "x-rapidapi-host": "amazon-products1.p.rapidapi.com",
-    },
-  };
+  const [primaryData, setprimaryData] = useState(data);
 
-  axios
-    .request(options)
-    .then(function (response) {
-      productData.push(response.data.results);
-      console.log(productData);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
+  return (
+    <div className="container">
+      <p className="display-6 text-center m-5">DSI Web Assignment</p>
 
-  return <div>{productData && productData.map((product) => console.log(product))}</div>;
+      <div className="row">
+        {primaryData &&
+          primaryData.map((productDetails, i) => (
+            <div className="card col-4 m-3" style={{ width: "18rem" }}>
+              <a href={productDetails.link}>
+                <img
+                  className="card-img-top"
+                  style={{ objectFit: "fill", height: "15rem", width: "15rem" }}
+                  src={productDetails.img}
+                  alt="Card image cap"
+                ></img>
+              </a>
+              <div className="card-body">
+                <h5 className="card-title">{productDetails.name}</h5>
+                <p className="card-text">
+                  BDT: {parseInt(productDetails.price * 80)}
+                </p>
+              </div>
+            </div>
+          ))}
+      </div>
+    </div>
+  );
 }
 
 export default App;
