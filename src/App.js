@@ -9,25 +9,29 @@ function App() {
     if (searchValue === "") {
       setprimaryData(data);
     } else {
-      const searchedArray = primaryData.filter((dt) => {
-        return dt.name.includes(searchValue);
-      });
+      const searchedArray = primaryData.filter((dt) =>
+        dt.name.includes(searchValue)
+      );
       setprimaryData(searchedArray);
     }
   };
 
   const sortByPriceLow = () => {
-    setprimaryData(()=>{return sortData("L")});
+    setprimaryData(() => {
+      return sortData("L");
+    });
   };
 
   const sortByPriceHigh = () => {
-    setprimaryData(()=>{return sortData("H")});
+    setprimaryData(() => {
+      return sortData("H");
+    });
   };
 
   const sortData = (value) => {
     const prices = primaryData.map((dt) => dt.price);
     let sortedPrice = prices.sort();
-    if(value === "H"){
+    if (value === "H") {
       sortedPrice.reverse();
     }
     const sortedData = [];
